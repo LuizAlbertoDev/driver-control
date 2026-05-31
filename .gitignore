@@ -1,0 +1,18 @@
+# Sistema operacional
+.DS_Store          # arquivo que o Mac cria automaticamente
+Thumbs.db          # arquivo que o Windows cria automaticamente
+
+# Editor de código
+.vscode/settings.json   # suas preferências pessoais do VS Code
+*.code-workspace
+
+# Dependências (quando você começar a usar npm no futuro)
+node_modules/
+
+# Arquivos de ambiente (senhas, chaves de API — NUNCA sobem pro GitHub)
+.env
+.env.local
+
+# Build (arquivos gerados automaticamente)
+dist/
+build/
