@@ -11,18 +11,35 @@ function renderEarnings() {
         return
     }
 
+    
+
     earnings.forEach((earning) => {
-        const earningItem = document.createElement('div')
-        earningItem.classList.add('earning-item')
+
+        const earningItem = document.createElement('div');
+
+        earningItem.classList.add('record-card');
+        earningItem.classList.add(`platform-${earning.platform}`);
+
         earningItem.innerHTML = `
             <p><strong>Data:</strong> ${earning.date}</p>
             <p><strong>Plataforma:</strong> ${earning.platform}</p>
             <p><strong>KM rodados:</strong> ${earning.km}</p>
-            <p><strong>Valor ganho:</strong> ${Number(earning.earned).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-            <p><strong>Combustível:</strong> ${Number(earning.fuel).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-        `
-        earningList.appendChild(earningItem)
-    })
+            <p><strong>Valor ganho:</strong>
+                ${Number(earning.earned).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                })}
+            </p>
+            <p><strong>Combustível:</strong>
+                ${Number(earning.fuel).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                })}
+            </p>
+        `;
+
+        earningList.appendChild(earningItem);
+    });
 }
 
 function setupEarningsForm() {

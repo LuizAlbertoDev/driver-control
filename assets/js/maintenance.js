@@ -14,23 +14,29 @@ const PECAS = [
     { id: 'pneus', nome: 'Pneus', intervaloKm: 50000 }
 ];
 
-const selectPeca = document.querySelector("#peca");
+function preencherSelectPecas() {
+    const selectPeca = document.getElementById("peca");
 
-PECAS.forEach(peca => {
-    const option = document.createElement("option");
+    if (!selectPeca) return;
 
-    option.value = peca.id;
-    option.textContent = `${peca.nome}`;
+    PECAS.forEach(peca => {
+        const option = document.createElement("option");
 
-    selectPeca.appendChild(option);
-});
+        option.value = peca.id;
+        option.textContent = peca.nome;
 
-function setupMaintenanceForm(){
-    
-    const form = document.getElementById('expenses-form')
-    if (!form) return
+        selectPeca.appendChild(option);
+    });
+}
 
-    form.addEventListener('submit', function(event) {
+function setupMaintenanceForm() {
+
+    const form = document.getElementById("expenses-form");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (event) {
+
         event.preventDefault();
 
         const pecaId = document.getElementById("peca").value;
@@ -38,40 +44,38 @@ function setupMaintenanceForm(){
         const custo = Number(document.getElementById("valor-despesa").value);
         const data = document.getElementById("date").value;
 
-         // busca a peça no array
-        const peca = PECAS.find( p => p.id === pecaId);
+        const peca = PECAS.find(p => p.id === pecaId);
 
-        // verifica se foi selecionado
         if (!peca) {
-            alert("Selecione uma peça");
+            alert("Selecione uma peça.");
             return;
         }
 
-         // calcula próxima troca
         const proximaTroca = kmAtual + peca.intervaloKm;
 
-        // monta o registro
         const registro = {
             peca: peca.nome,
             pecaId: peca.id,
             kmTroca: kmAtual,
-            proximaTroca: proximaTroca,
-            custo: custo,
+            proximaTroca,
+            custo,
             date: data
         };
 
-        // salva
-        const registros = getData('maintenance') || [];
+        const registros = getData("maintenance");
+
         registros.push(registro);
-        saveData('maintenance', registros);
+
+        saveData("maintenance", registros);
 
         form.reset();
-        renderMaintenance()
-    
+
+        renderMaintenance();
     });
 }
 
 function renderMaintenance() {
+
     const container = document.getElementById("maintenance-list");
 
     if (!container) return;
@@ -80,23 +84,57 @@ function renderMaintenance() {
 
     container.innerHTML = "";
 
-    registros.forEach(registro => {
+    if (registros.length === 0) {
+
+        container.innerHTML = `
+            <p>Nenhuma manutenção registrada.</p>
+        `;
+
+        return;
+    }
+
+    registros.forEach((registro, index) => {
+
         const card = document.createElement("div");
+
+        card.classList.add("record-card");
+        card.classList.add("maintenance-record");
 
         card.innerHTML = `
             <p><strong>Peça:</strong> ${registro.peca}</p>
             <p><strong>Data:</strong> ${registro.date}</p>
-            <p><strong>KM da troca:</strong> ${registro.kmTroca}</p>
-            <p><strong>Próxima troca:</strong> ${registro.proximaTroca}</p>
-            <p><strong>Custo:</strong> R$ ${registro.custo}</p>
-            <hr>
+            <p><strong>KM da troca:</strong> ${registro.kmTroca.toLocaleString('pt-BR')} km</p>
+            <p><strong>Próxima troca:</strong> ${registro.proximaTroca.toLocaleString('pt-BR')} km</p>
+            <p><strong>Custo:</strong> ${registro.custo.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            })}</p>
+
+            <button class="btn btn--danger" onclick="deleteMaintenance(${index})">
+                Excluir
+            </button>
         `;
 
         container.appendChild(card);
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function deleteMaintenance(index) {
+
+    const registros = getData("maintenance");
+
+    registros.splice(index, 1);
+
+    saveData("maintenance", registros);
+
+    renderMaintenance();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    preencherSelectPecas();
+
     setupMaintenanceForm();
+
     renderMaintenance();
 });
