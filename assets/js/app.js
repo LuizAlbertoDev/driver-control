@@ -7,3 +7,7 @@ if (typeof setupExpensesForm === 'function') {
     setupExpensesForm()
     renderExpenses()
 }
+
+if (typeof renderDashboard === 'function') {
+    renderDashboard()
+}

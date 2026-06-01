@@ -30,21 +30,27 @@
         <div class="dashboard__cards">
 
           <div class="card card--success">
-            <span class="card__label">Ganho médio</span>
-            <strong class="card__value">R$ 0,00</strong>
-            <span class="card__info">Últimos 7 dias</span>
+              <span class="card__label">Ganho total</span>
+              <strong class="card__value" id="total-ganhos">R$ 0,00</strong>
+              <span class="card__info">Todos os registros</span>
           </div>
 
           <div class="card card--danger">
-            <span class="card__label">Gasto médio</span>
-            <strong class="card__value">R$ 0,00</strong>
-            <span class="card__info">Últimos 7 dias</span>
+              <span class="card__label">Gasto total</span>
+              <strong class="card__value" id="total-despesas">R$ 0,00</strong>
+              <span class="card__info">Todos os registros</span>
           </div>
 
           <div class="card card--warning">
-            <span class="card__label">Próxima manutenção</span>
-            <strong class="card__value">— km</strong>
-            <span class="card__info">Nenhuma cadastrada</span>
+              <span class="card__label">Lucro líquido</span>
+              <strong class="card__value" id="lucro-liquido">R$ 0,00</strong>
+              <span class="card__info">Ganhos - Despesas</span>
+          </div>
+
+          <div class="card card--warning">
+              <span class="card__label">Km rodados</span>
+              <strong class="card__value" id="km-rodados">0 km</strong>
+              <span class="card__info">Total acumulado</span>
           </div>
 
         </div>
@@ -56,6 +62,8 @@
         <p>&copy; 2025 Driver Control. Desenvolvido por Luiz Alberto.</p>
     </footer>
 
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>
