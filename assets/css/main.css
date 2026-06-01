@@ -1,212 +1,19 @@
-.main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-xl);
-}
-
+/* ==========================================================================
+   1. ESTILOS GLOBAIS E BASE
+   ========================================================================== */
 body {
     font-family: var(--font-family);
     background-color: var(--color-bg);
     color: var(--color-text);
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
 }
 
-.header {
-    background-color: var(--color-header);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    min-height: 90px;
-    color: white;
-}
-
-.header__nav{
-    display: flex;
-    gap: 2rem;
-}
-
-.header__nav a {
-    text-decoration: none;
-    color: white;
-    font-size: var(--font-size-base);
-    transition: color 0.3s ease;
-}
-
-.header__nav a:hover {
-    color: var(--color-secondary);
-}
-
-.dashboard__cards {
-    display: flex;
-    gap: 2rem;
-}
-
-.card {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-lg);
-    flex: 1;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);  /* sombra sutil */
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.card--success {
-    border-left: 4px solid var(--color-secondary);
-}
-
-.card--danger{
-    border-left: 4px solid var(--color-danger);
-}
-
-.card--warning{
-    border-left: 4px solid var(--color-warning);
-}
-
-.card__label{
-    font-size: var(--font-size-sm);
-    color:var(--color-text-muted);
-    margin-bottom: var(--spacing-sm);
-}
-
-.card__value{
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: var(--spacing-sm);
-}
-
-.card__info{
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-}
-
-@media (max-width: 768px) {
-    .dashboard__cards {
-        flex-direction: column;
-    }
-
-    .header {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        padding: var(--spacing-md);
-    }
-
-    .header__nav {
-        gap: var(--spacing-md);
-    }
-}
-
-.earnings-list {
-    /* margin-top: var(--spacing-xl);  <-- RECOVERY / REMOVA ESTA LINHA */
-    background-color: var(--color-bg-card);
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-
-.earnings-list h3 {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text);
-}
-
-.earning-item {
-    background-color: var(--color-bg-card);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md) var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-    border-left: 4px solid var(--color-secondary);
-    display: flex;
-    gap: var(--spacing-lg);
-    flex-wrap: wrap;
-}
-
-.earning-item p {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-    margin: 0;
-}
-
-.earning-item p strong {
-    color: var(--color-text);
-    display: block;
-    margin-bottom: 2px;
-}
-
-.earnings-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    max-width: 480px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.form-group label {
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    color: var(--color-text);
-}
-
-.form-group input,
-.form-group select {
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-base);
-    color: var(--color-text);
-    background-color: var(--color-bg-card);
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--color-primary);
-}
-
-/* FORM PADRÃO PARA TODAS AS PÁGINAS */
-
-.form-card {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    max-width: 100%;
-}
-
-.btn {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: var(--border-radius);
-    border: none;
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn--primary {
-    background-color: var(--color-primary);
-    color: white;
-}
-
-.btn--primary:hover {
-    background-color: var(--color-primary-dark);
-}
-
-/* ==========================
-   MANUTENÇÃO
-========================== */
 
 h2 {
     font-size: 2rem;
@@ -219,37 +26,121 @@ h3 {
     color: var(--color-text);
 }
 
-.expenses {
+/* ==========================================================================
+   2. LAYOUT (HEADER & FOOTER)
+   ========================================================================== */
+.header {
+    background-color: var(--color-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    min-height: 90px;
+    color: white;
+}
+
+.header__nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.header__nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Cria um espaçamento perfeito de 8px entre o ícone e o texto */
+    text-decoration: none; /* Garante que não crie sublinhado embaixo do ícone */
+}
+
+.header__nav a:hover {
+    color: var(--color-secondary);
+}
+
+.footer {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    text-align: center;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   3. ESTRUTURA DE GRIDS DE PÁGINAS (DESKTOP)
+   ========================================================================== */
+.page-grid, .expenses, .earnings {
     display: grid;
     grid-template-columns: 380px 1fr;
     gap: var(--spacing-xl);
     align-items: start;
 }
 
-/* Formulário */
+/* Grids internos das listas (Faz os registros virarem colunas elegantes no desktop) */
+#expenses-list, #earnings-list, #maintenance-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
 
-.expenses-form {
+/* Container que envelopa as listas */
+.list-card, .expenses-list, .earnings-list, .maintenance-list {
     background-color: var(--color-bg-card);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 
+/* ==========================================================================
+   4. COMPONENTES: DASHBOARD (CARDS RESUMO)
+   ========================================================================== */
+.dashboard__cards {
+    display: flex;
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--color-bg-card);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    flex: 1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.card--success { border-left: 4px solid var(--color-secondary); }
+.card--danger  { border-left: 4px solid var(--color-danger); }
+.card--warning { border-left: 4px solid var(--color-warning); }
+
+.card__label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-sm);
+}
+
+.card__value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+}
+
+.card__info {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   5. COMPONENTES: FORMULÁRIOS & BOTÕES
+   ========================================================================== */
+.form-card, .expenses-form, .earnings-form {
+    background-color: var(--color-bg-card);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
     max-width: 100%;
-}
-
-.expenses-list {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-#expenses-list {
-    display: grid;
-    gap: var(--spacing-md);
 }
 
 .form-group {
@@ -272,377 +163,14 @@ h3 {
     font-size: var(--font-size-base);
     color: var(--color-text);
     background-color: var(--color-bg-card);
-
-    transition: border-color .3s ease,
-                box-shadow .3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
     border-color: var(--color-primary);
-
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
-}
-
-/* Botão */
-
-.btn--primary {
-    margin-top: var(--spacing-sm);
-    width: 100%;
-}
-
-/* Lista */
-
-.maintenance-list {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-#maintenance-list {
-    display: grid;
-    gap: var(--spacing-md);
-}
-
-/* Card de manutenção */
-
-.maintenance-card {
-    background-color: white;
-
-    border-left: 5px solid var(--color-primary);
-
-    border-radius: var(--border-radius);
-
-    padding: var(--spacing-lg);
-
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-
-    transition: transform .2s ease,
-                box-shadow .2s ease;
-}
-
-.maintenance-card:hover {
-    transform: translateY(-2px);
-
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-}
-
-.maintenance-card p {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-muted);
-    line-height: 1.5;
-}
-
-.maintenance-card strong {
-    color: var(--color-text);
-}
-
-.maintenance-card hr {
-    margin-top: var(--spacing-md);
-    border: none;
-    border-top: 1px solid var(--color-border);
-}
-
-/* Rodapé */
-
-.footer {
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-lg);
-    text-align: center;
-    color: var(--color-text-muted);
-    border-top: 1px solid var(--color-border);
-}
-
-.btn--danger {
-    background-color: var(--color-danger);
-    color: white;
-    margin-top: 1rem;
-}
-
-.btn--danger:hover {
-    opacity: 0.9;
-}
-
-/* Responsivo */
-
-@media (max-width: 768px) {
-
-    .expenses {
-        grid-template-columns: 1fr;
-    }
-
-    .maintenance-list {
-        margin-top: 0;
-    }
-}
-
-/* Categorias de despesas */
-
-.expense-combustivel {
-    border-left-color: #f59e0b;
-}
-
-.expense-alimentacao {
-    border-left-color: #10b981;
-}
-
-.expense-pedagio {
-    border-left-color: #6366f1;
-}
-
-.expense-lavagem {
-    border-left-color: #06b6d4;
-}
-
-.expense-estacionamento {
-    border-left-color: #8b5cf6;
-}
-
-.expense-manutencao {
-    border-left-color: #ef4444;
-}
-
-.expense-outros {
-    border-left-color: #64748b;
-}
-
-/* Lista de ganhos */
-
-.earnings {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: var(--spacing-xl);
-    align-items: stretch; /* Isso faz os dois cards terem sempre a mesma altura */
-}
-
-.earnings-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.earnings-col .form-card,
-.earnings-col .earnings-list {
-    flex: 1;
-}
-
-.earnings-list {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    margin-top: 0; /* <--- Adicione essa linha aqui para zerar os 32px */
-}
-
-#earnings-list {
-    display: grid;
-    gap: var(--spacing-md);
-}
-
-
-@media (max-width: 768px) {
-
-    .earnings {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================
-   CARDS DE REGISTROS
-========================== */
-
-.record-card {
-    background-color: white;
-    border-radius: var(--border-radius);
-    padding: var(--spacing-lg);
-
-    box-shadow: 0 1px 4px rgba(0,0,0,.08);
-
-    transition: transform .2s ease,
-                box-shadow .2s ease;
-}
-
-.record-card:hover {
-    transform: translateY(-2px);
-
-    box-shadow: 0 6px 14px rgba(0,0,0,.12);
-}
-
-.record-card p {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-muted);
-    line-height: 1.5;
-}
-
-.record-card strong {
-    color: var(--color-text);
-}
-
-.main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-xl);
-}
-
-body {
-    font-family: var(--font-family);
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    min-height: 100vh;
-}
-
-.header {
-    background-color: var(--color-header);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    min-height: 90px;
-    color: white;
-}
-
-.header__nav{
-    display: flex;
-    gap: 2rem;
-}
-
-.header__nav a {
-    text-decoration: none;
-    color: white;
-    font-size: var(--font-size-base);
-    transition: color 0.3s ease;
-}
-
-.header__nav a:hover {
-    color: var(--color-secondary);
-}
-
-.dashboard__cards {
-    display: flex;
-    gap: 2rem;
-}
-
-.card {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-lg);
-    flex: 1;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);  /* sombra sutil */
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.card--success {
-    border-left: 4px solid var(--color-secondary);
-}
-
-.card--danger{
-    border-left: 4px solid var(--color-danger);
-}
-
-.card--warning{
-    border-left: 4px solid var(--color-warning);
-}
-
-.card__label{
-    font-size: var(--font-size-sm);
-    color:var(--color-text-muted);
-    margin-bottom: var(--spacing-sm);
-}
-
-.card__value{
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: var(--spacing-sm);
-}
-
-.card__info{
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-}
-
-@media (max-width: 768px) {
-    .dashboard__cards {
-        flex-direction: column;
-    }
-
-    .header {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        padding: var(--spacing-md);
-    }
-
-    .header__nav {
-        gap: var(--spacing-md);
-    }
-}
-
-
-.earnings-list h3 {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text);
-}
-
-.earning-item {
-    background-color: var(--color-bg-card);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md) var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-    border-left: 4px solid var(--color-secondary);
-    display: flex;
-    gap: var(--spacing-lg);
-    flex-wrap: wrap;
-}
-
-.earning-item p {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-    margin: 0;
-}
-
-.earning-item p strong {
-    color: var(--color-text);
-    display: block;
-    margin-bottom: 2px;
-}
-
-.earnings-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    max-width: 480px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.form-group label {
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    color: var(--color-text);
-}
-
-.form-group input,
-.form-group select {
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-base);
-    color: var(--color-text);
-    background-color: var(--color-bg-card);
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .btn {
@@ -652,167 +180,18 @@ body {
     font-size: var(--font-size-base);
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .btn--primary {
     background-color: var(--color-primary);
     color: white;
-}
-
-.btn--primary:hover {
-    background-color: var(--color-primary-dark);
-}
-
-/* ==========================
-   MANUTENÇÃO
-========================== */
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-xl);
-    color: var(--color-text);
-}
-
-h3 {
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-text);
-}
-
-.expenses {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: var(--spacing-xl);
-    align-items: start;
-}
-
-/* Formulário */
-
-.expenses-form {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    max-width: 100%;
-}
-
-.expenses-list {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-#expenses-list {
-    display: grid;
-    gap: var(--spacing-md);
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.form-group label {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    color: var(--color-text);
-}
-
-.form-group input,
-.form-group select {
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-base);
-    color: var(--color-text);
-    background-color: var(--color-bg-card);
-
-    transition: border-color .3s ease,
-                box-shadow .3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--color-primary);
-
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
-}
-
-/* Botão */
-
-.btn--primary {
     margin-top: var(--spacing-sm);
     width: 100%;
 }
 
-/* Lista */
-
-.maintenance-list {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-#maintenance-list {
-    display: grid;
-    gap: var(--spacing-md);
-}
-
-/* Card de manutenção */
-
-.maintenance-card {
-    background-color: white;
-
-    border-left: 5px solid var(--color-primary);
-
-    border-radius: var(--border-radius);
-
-    padding: var(--spacing-lg);
-
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-
-    transition: transform .2s ease,
-                box-shadow .2s ease;
-}
-
-.maintenance-card:hover {
-    transform: translateY(-2px);
-
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-}
-
-.maintenance-card p {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-muted);
-    line-height: 1.5;
-}
-
-.maintenance-card strong {
-    color: var(--color-text);
-}
-
-.maintenance-card hr {
-    margin-top: var(--spacing-md);
-    border: none;
-    border-top: 1px solid var(--color-border);
-}
-
-/* Rodapé */
-
-.footer {
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-lg);
-    text-align: center;
-    color: var(--color-text-muted);
-    border-top: 1px solid var(--color-border);
+.btn--primary:hover {
+    background-color: var(--color-primary-dark);
 }
 
 .btn--danger {
@@ -825,234 +204,122 @@ h3 {
     opacity: 0.9;
 }
 
-/* Responsivo */
-
-@media (max-width: 768px) {
-
-    .expenses {
-        grid-template-columns: 1fr;
-    }
-
-    .maintenance-list {
-        margin-top: 0;
-    }
-}
-
-/* Categorias de despesas */
-
-.expense-combustivel {
-    border-left-color: #f59e0b;
-}
-
-.expense-alimentacao {
-    border-left-color: #10b981;
-}
-
-.expense-pedagio {
-    border-left-color: #6366f1;
-}
-
-.expense-lavagem {
-    border-left-color: #06b6d4;
-}
-
-.expense-estacionamento {
-    border-left-color: #8b5cf6;
-}
-
-.expense-manutencao {
-    border-left-color: #ef4444;
-}
-
-.expense-outros {
-    border-left-color: #64748b;
-}
-
-/* Lista de ganhos */
-
-.earnings {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: var(--spacing-xl);
-    align-items: start;
-}
-
-.earnings-list {
+/* ==========================================================================
+   6. COMPONENTES: CARDS DE REGISTROS (ITENS DAS LISTAS)
+   ========================================================================== */
+.record-card, .maintenance-card, .earning-item {
     background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-#earnings-list {
-    display: grid;
-    gap: var(--spacing-md);
-}
-
-
-@media (max-width: 768px) {
-
-    .earnings {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================
-   CARDS DE REGISTROS
-========================== */
-
-.record-card {
-    background-color: white;
     border-radius: var(--border-radius);
     padding: var(--spacing-lg);
-
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     border-left: 5px solid var(--color-primary);
-
-    box-shadow: 0 1px 4px rgba(0,0,0,.08);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.record-card:hover {
+.record-card:hover, .maintenance-card:hover, .earning-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,.12);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-.record-card p {
+.record-card p, .maintenance-card p, .earning-item p {
     margin-bottom: var(--spacing-xs);
     color: var(--color-text-muted);
     line-height: 1.5;
+    font-size: var(--font-size-sm);
 }
 
-.record-card strong {
+.record-card strong, .maintenance-card strong, .earning-item strong {
     color: var(--color-text);
 }
+
+.maintenance-card hr {
+    margin-top: var(--spacing-md);
+    border: none;
+    border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   7. BORDAS DINÂMICAS (CATEGORIAS E PLATAFORMAS)
+   ========================================================================== */
+/* Despesas */
+.expense-combustivel     { border-left-color: #f59e0b; }
+.expense-alimentacao     { border-left-color: #10b981; }
+.expense-pedagio         { border-left-color: #6366f1; }
+.expense-lavagem         { border-left-color: #06b6d4; }
+.expense-estacionamento { border-left-color: #8b5cf6; }
+.expense-manutencao      { border-left-color: #ef4444; }
+.expense-outros          { border-left-color: #64748b; }
 
 /* Ganhos */
-
-.platform-uber {
-    border-left: 5px solid #000000;
-}
-
-.platform-99 {
-    border-left: 5px solid #f59e0b;
-}
-
-.platform-indrive {
-    border-left: 5px solid #22c55e;
-}
-
-.platform-outro {
-    border-left: 5px solid #64748b;
-}
-
-/* Manutenção */
-
-.maintenance-record {
-    border-left: 5px solid var(--color-primary);
-}
-
-/* ==========================
-   LAYOUT PADRÃO (USADO EM TODAS AS PÁGINAS)
-========================== */
-
-.page-grid {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: var(--spacing-xl);
-    align-items: start;
-}
-
-.form-card {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.list-card {
-    background-color: var(--color-bg-card);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-/* ==========================
-   FORM (PADRÃO GLOBAL)
-========================== */
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.form-group label {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    color: var(--color-text);
-}
-
-.form-group input,
-.form-group select {
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-base);
-    background-color: var(--color-bg-card);
-    color: var(--color-text);
-}
-
-/* ==========================
-   BOTÃO
-========================== */
-
-.btn--primary {
-    width: 100%;
-    margin-top: var(--spacing-sm);
-}
-
-/* ==========================
-   CARDS DE REGISTRO (PADRÃO ÚNICO)
-========================== */
-
-.record-card {
-    background-color: white;
-    border-left: 5px solid var(--color-primary);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-lg);
-
-    box-shadow: 0 1px 4px rgba(0,0,0,.08);
-
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.record-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,.12);
-}
-
-/* texto interno */
-.record-card p {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-muted);
-}
-
-.record-card strong {
-    color: var(--color-text);
-}
-
-/* ==========================
-   PLATAFORMAS (APENAS BORDA)
-========================== */
-
-.platform-uber { border-left-color: #000; }
-.platform-99 { border-left-color: #f59e0b; }
+.platform-uber    { border-left-color: #000000; }
+.platform-99      { border-left-color: #f59e0b; }
 .platform-indrive { border-left-color: #22c55e; }
-.platform-outro { border-left-color: #64748b; }
+.platform-outro   { border-left-color: #64748b; }
+
+
+
+/* ==========================
+   8. RESPONSIVIDADE (MOBILE)
+   ========================== */
+@media (max-width: 768px) {
+    .page-grid, .expenses, .earnings {
+        grid-template-columns: 1fr;
+    }
+
+    #expenses-list, #earnings-list, #maintenance-list {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard__cards {
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+
+    .header__nav {
+        gap: var(--spacing-md);
+    }
+}
+
+/* ==========================================================================
+   PADRONIZAÇÃO E ALINHAMENTO DOS CARDS (DESKTOP)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+    /* 1. Alinha o topo das duas colunas principais */
+    .earnings, 
+    .expenses {
+        display: grid !important;
+        grid-template-columns: 380px 1fr !important;
+        gap: var(--spacing-xl) !important;
+        align-items: start !important; /* Força o alinhamento magnético pelo topo */
+    }
+
+    /* 2. Força tanto o Form quanto a Lista a terem a MESMA estrutura de caixa branca */
+    .form-card, 
+    .earnings-list, 
+    .expenses-list, 
+    .maintenance-list {
+        background-color: var(--color-bg-card) !important;
+        padding: var(--spacing-xl) !important;
+        border-radius: var(--border-radius-lg) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        margin-top: 0 !important; /* Remove margens antigas que empurravam para baixo */
+    }
+
+    /* 3. Garante que os títulos fiquem idênticos dentro das caixas brancas */
+    .form-card h3, 
+    .earnings-list h3, 
+    .expenses-list h3, 
+    .maintenance-list h3 {
+        margin-top: 0 !important;
+        margin-bottom: var(--spacing-lg) !important;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+}
+

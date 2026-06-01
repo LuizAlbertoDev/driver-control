@@ -97,10 +97,3 @@ function deleteExpense(index) {
 
     renderExpenses();
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    setupExpensesForm();
-
-    renderExpenses();
-});

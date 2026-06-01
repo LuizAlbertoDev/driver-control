@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ganhos — Driver Control</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/variables.css" />
     <link rel="stylesheet" href="../assets/css/main.css" />
@@ -11,66 +12,77 @@
   <body>
 
     <header class="header">
-      <img src="../assets/img/logo.svg" alt="Driver Control" height="48" />
+      <div class="header__logo">
+        <img src="../assets/img/logo.svg" alt="Driver Control" height="48" />
       </div>
       <nav class="header__nav">
-        <a href="../index.html">Dashboard</a>
-        <a href="earnings.html">Ganhos</a>
-        <a href="expenses.html">Despesas</a>
-        <a href="maintenance.html">Manutenção</a>
+        <a href="../index.html">
+          <i class="fa-solid fa-chart-simple"></i> Dashboard
+        </a>
+        <a href="earnings.html">
+          <i class="fa-solid fa-money-bill-trend-up"></i> Ganhos
+        </a>
+        <a href="expenses.html">
+          <i class="fa-solid fa-receipt"></i> Despesas
+        </a>
+        <a href="maintenance.html">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Manutenção
+        </a>
       </nav>
     </header>
 
     <main class="main">
       <h2>Ganhos</h2>
 
-      <section class="earnings">
+      <div class="page-grid">
         
-        <form class="form-card" id="earnings-form">
-          <h3>Registrar Ganho</h3>
+        <div>
+          
+          <form class="form-card" id="earnings-form">
+            <h3 style="margin-bottom: var(--spacing-md);">Registrar Ganho</h3>
 
-          <div class="form-group">
-            <label for="date">Data</label>
-            <input type="date" id="date" name="date" required />
-          </div>
+            <div class="form-group">
+              <label for="date">Data</label>
+              <input type="date" id="date" name="date" required />
+            </div>
 
-          <div class="form-group">
-            <label for="platform">Plataforma</label>
-            <select id="platform" name="platform" required>
-              <option value="">Selecione...</option>
-              <option value="uber">Uber</option>
-              <option value="99">99</option>
-              <option value="indrive">InDrive</option>
-              <option value="outro">Outro</option>
-            </select>
-          </div>
+            <div class="form-group">
+              <label for="platform">Plataforma</label>
+              <select id="platform" name="platform" required>
+                <option value="">Selecione...</option>
+                <option value="uber">Uber</option>
+                <option value="99">99</option>
+                <option value="indrive">InDrive</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <label for="km">Km rodados</label>
-            <input type="number" id="km" name="km" min="0" step="0.1" placeholder="0" required />
-          </div>
+            <div class="form-group">
+              <label for="km">Km rodados</label>
+              <input type="number" id="km" name="km" min="0" step="0.1" placeholder="0" required />
+            </div>
 
-          <div class="form-group">
-            <label for="earned">Valor faturado (R$)</label>
-            <input type="number" id="earned" name="earned" min="0" step="0.01" placeholder="0,00" required />
-          </div>
+            <div class="form-group">
+              <label for="earned">Valor faturado (R$)</label>
+              <input type="number" id="earned" name="earned" min="0" step="0.01" placeholder="0,00" required />
+            </div>
 
-          <div class="form-group">
-            <label for="fuel">Gasto com combustível (R$)</label>
-            <input type="number" id="fuel" name="fuel" min="0" step="0.01" placeholder="0,00" required />
-          </div>
+            <div class="form-group">
+              <label for="fuel">Gasto com combustível (R$)</label>
+              <input type="number" id="fuel" name="fuel" min="0" step="0.01" placeholder="0,00" required />
+            </div>
 
-          <button type="submit" class="btn btn--primary">Salvar registro</button>
-        </form>
+            <button type="submit" class="btn btn--primary">Salvar registro</button>
+          </form>
+        </div>
 
         <section class="earnings-list">
           <h3>Registros</h3>
-          
           <div id="earnings-list">
             </div>
         </section>
 
-      </section>
+      </div>
     </main>
 
     <footer class="footer">

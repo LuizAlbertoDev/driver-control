@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Driver Control - Controle financeiro para motoristas de aplicativo" />
     <title>Driver Control</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -14,22 +17,29 @@
       <div class="header__logo">
         <img src="assets/img/logo.svg" alt="Driver Control" height="48" />
       </div>
+      
       <nav class="header__nav">
-        <a href="index.html">Dashboard</a>
-        <a href="pages/earnings.html">Ganhos</a>
-        <a href="pages/expenses.html">Despesas</a>
-        <a href="pages/maintenance.html">Manutenção</a>
+        <a href="index.html">
+          <i class="fa-solid fa-chart-simple"></i> Dashboard
+        </a>
+        <a href="pages/earnings.html">
+          <i class="fa-solid fa-money-bill-trend-up"></i> Ganhos
+        </a>
+        <a href="pages/expenses.html">
+          <i class="fa-solid fa-receipt"></i> Despesas
+        </a>
+        <a href="pages/maintenance.html">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Manutenção
+        </a>
       </nav>
     </header>
 
     <main class="main">
-
       <section class="dashboard">
         <h2 class="dashboard__title">Resumo</h2>
         <span class="card__info">Este mês</span>
 
         <div class="dashboard__cards">
-
           <div class="card card--success">
               <span class="card__label">Ganho total</span>
               <strong class="card__value" id="total-ganhos">R$ 0,00</strong>
@@ -53,10 +63,8 @@
               <strong class="card__value" id="km-rodados">0 km</strong>
               <span class="card__info">Total acumulado</span>
           </div>
-
         </div>
       </section>
-
     </main>
 
     <footer class="footer">
