@@ -12,7 +12,7 @@
   <body>
     <header class="header">
       <div class="header__logo">
-        <h1>Driver Control</h1>
+        <img src="assets/img/logo.svg" alt="Driver Control" height="48" />
       </div>
       <nav class="header__nav">
         <a href="index.html">Dashboard</a>
@@ -23,8 +23,33 @@
     </header>
 
     <main class="main">
-      <h2>Bem-vindo ao Driver Control</h2>
-      <p>Seu painel de controle financeiro.</p>
+
+      <section class="dashboard">
+        <h2 class="dashboard__title">Resumo</h2>
+
+        <div class="dashboard__cards">
+
+          <div class="card card--success">
+            <span class="card__label">Ganho médio</span>
+            <strong class="card__value">R$ 0,00</strong>
+            <span class="card__info">Últimos 7 dias</span>
+          </div>
+
+          <div class="card card--danger">
+            <span class="card__label">Gasto médio</span>
+            <strong class="card__value">R$ 0,00</strong>
+            <span class="card__info">Últimos 7 dias</span>
+          </div>
+
+          <div class="card card--warning">
+            <span class="card__label">Próxima manutenção</span>
+            <strong class="card__value">— km</strong>
+            <span class="card__info">Nenhuma cadastrada</span>
+          </div>
+
+        </div>
+      </section>
+
     </main>
 
     <footer class="footer">
