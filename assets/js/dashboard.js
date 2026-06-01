@@ -18,22 +18,36 @@ function calcularKmRodados(){
     return KmGanhos
 }
 
-function renderDashboard(){
-    const ganhosTotais = calcularGanhosTotais()
-    const despesasTotais = calcularDespesasTotais()
-    const lucroLiquido = calcularLucroLiquedo()
-    const kmRodados = calcularKmRodados()
-    document.getElementById('total-ganhos').textContent = 
-    ganhosTotais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+function renderDashboard() {
+    const ganhosMes = filtrarMesAtual(getData('earnings'))
+    const despesasMes = filtrarMesAtual(getData('expenses'))
 
-    document.getElementById('total-despesas').textContent = 
+    const ganhosTotais = ganhosMes.reduce((total, g) => total + g.earned, 0)
+    const despesasTotais = despesasMes.reduce((total, d) => total + d.value, 0)
+    const lucroLiquido = ganhosTotais - despesasTotais
+    const kmRodados = ganhosMes.reduce((total, g) => total + g.km, 0)
+
+    document.getElementById('total-ganhos').textContent =
+        ganhosTotais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    document.getElementById('total-despesas').textContent =
         despesasTotais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-
-    document.getElementById('lucro-liquido').textContent = 
+    document.getElementById('lucro-liquido').textContent =
         lucroLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-
-    document.getElementById('km-rodados').textContent = 
+    document.getElementById('km-rodados').textContent =
         `${kmRodados.toLocaleString('pt-BR')} km`
+}
+
+function filtrarMesAtual(registros){
+    const hoje = new Date()
+    const mesAtual = hoje.getMonth()
+    const anoAtual = hoje.getFullYear()
+
+    return registros.filter(registro => {
+        const dataRegistro = new Date(registro.date)
+        return dataRegistro.getMonth() === mesAtual && dataRegistro.getFullYear() === anoAtual
+
+    })
+
 }
 
 document.addEventListener('DOMContentLoaded', renderDashboard)
