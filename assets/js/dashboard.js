@@ -1,23 +1,3 @@
-function calcularGanhosTotais(){
-    const ganhos = getData('earnings')
-    return ganhos.reduce((total,ganho) => total + ganho.earned,0)
-}
-
-function calcularDespesasTotais(){
-    const despesas = getData('expenses')
-    return despesas.reduce((total,despesa) => total + despesa.value,0)
-}
-
-function calcularLucroLiquedo(){
-    return calcularGanhosTotais() - calcularDespesasTotais()
-}
-
-function calcularKmRodados(){
-    const ganhos = getData('earnings')
-    const KmGanhos = ganhos.reduce((total,ganho) => total + ganho.km,0)
-    return KmGanhos
-}
-
 function renderDashboard() {
     const ganhosMes = filtrarMesAtual(getData('earnings'))
     const despesasMes = filtrarMesAtual(getData('expenses'))

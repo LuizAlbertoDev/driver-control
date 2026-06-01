@@ -66,3 +66,7 @@ function setupEarningsForm() {
         renderEarnings()
     })
 }
+document.addEventListener('DOMContentLoaded', () => {
+    setupEarningsForm()
+    renderEarnings()
+})
