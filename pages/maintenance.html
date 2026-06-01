@@ -49,11 +49,6 @@
               <label for="peca">Peça</label>
               <select id="peca" name="peca" required>
                   <option value="">Selecione uma peça</option>
-                  <option value="oleo">Óleo do Motor</option>
-                  <option value="pneu">Pneus</option>
-                  <option value="freio">Pastilhas de Freio</option>
-                  <option value="suspensao">Suspensão</option>
-                  <option value="outros">Outros</option>
               </select>
             </div>
 
@@ -72,9 +67,15 @@
         </div>
 
         <section class="maintenance-list">
-            <h3>Registros</h3>
-            <div id="maintenance-list">
-              </div>
+            <div class="status-panel" style="margin-bottom: var(--spacing-xl);">
+              <h3>Status das Peças</h3>
+              <div id="maintenance-status" class="status-container"></div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: var(--spacing-lg) 0;" />
+
+            <h3>Histórico de Registros</h3>
+            <div id="maintenance-list"></div>
         </section>
 
       </div>
