@@ -36,9 +36,9 @@ function setupEarningsForm() {
         const registro = {
             date: document.getElementById('date').value,
             platform: document.getElementById('platform').value,
-            km: document.getElementById('km').value,
-            earned: document.getElementById('earned').value,
-            fuel: document.getElementById('fuel').value
+            km: Number(document.getElementById('km').value),
+            earned: Number(document.getElementById('earned').value),
+            fuel: Number(document.getElementById('fuel').value)
         }
 
         const registros = getData('earnings')

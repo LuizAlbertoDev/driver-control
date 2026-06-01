@@ -6,11 +6,11 @@ function setupExpensesForm() {
     event.preventDefault()
 
     const expense = {
-      date: document.getElementById("date").value,
-      category: document.getElementById("categoria").value,
-      value: document.getElementById("valor-despesa").value,
-      description: document.getElementById("descricao-despesa").value,
-      vehicleKm: document.getElementById("kmAtualVeiculo").value
+        date: document.getElementById("date").value,
+        category: document.getElementById("categoria").value,
+        value: Number(document.getElementById("valor-despesa").value),
+        description: document.getElementById("descricao-despesa").value,
+        vehicleKm: Number(document.getElementById("kmAtualVeiculo").value)
     }
 
     const expenses = getData("expenses")
