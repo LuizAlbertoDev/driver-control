@@ -2,7 +2,7 @@
 
 > Painel de controle financeiro e de manutenção para motoristas de aplicativo.
 
-![Dashboard](assets/img/screenshot-dashboard.png)
+![Dashboard](assets/img/dashboard.png)
 
 ---
 
@@ -59,16 +59,19 @@ cd driver-control
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](assets/img/screenshot-dashboard.png)
+![Dashboard](assets/img/dashboard.png)
 
 ### Controle de Ganhos
-![Ganhos](assets/img/screenshot-ganhos.png)
+![Ganhos](assets/img/ganhos.png)
 
 ### Controle de Despesas
-![Despesas](assets/img/screenshot-despesas.png)
+![Despesas](assets/img/despesas.png)
 
 ### Manutenção
-![Manutenção](assets/img/screenshot-manutencao.png)
+![Manutenção](assets/img/manutencao1.png)
+
+### Manutenção
+![Manutenção](assets/img/manutencao1.png)
 
 ---
 
