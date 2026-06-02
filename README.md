@@ -14,6 +14,13 @@ O **Driver Control** resolve esse problema oferecendo um painel completo e simpl
 
 ---
 
+## 🔗 Demo ao vivo
+
+👉 [Acesse o projeto online](https://luizalbertodev.github.io/driver-control/)
+
+___
+
+
 ## ✨ Funcionalidades
 
 - 📊 **Dashboard** — resumo mensal de ganhos, gastos, lucro líquido e km rodados
@@ -75,6 +82,13 @@ cd driver-control
 - [ ] Aplicativo mobile
 
 ---
+
+## 🌐 Deploy
+
+Hospedado via **GitHub Pages** — acesse em:  
+https://luizalbertodev.github.io/driver-control/
+
+___
 
 ## 👨‍💻 Autor
 
