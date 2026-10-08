@@ -35,7 +35,7 @@ function renderDashboardMaintenanceAlerts() {
     const registros = getData("maintenance") || [];
 
     if (registros.length === 0) {
-        container.innerHTML = `<p style="color: gray; font-style: italic; font-size: 0.9rem;">Nenhuma manutenção registrada. Tudo em dia por aqui!</p>`;
+        container.innerHTML = `<p style="color: gray; font-style: italic; font-size: 0.9rem;">Nenhuma manutenção registrada. Nenhum alerta disponível sem registros de manutenção.</p>`;
         return;
     }
 
@@ -78,7 +78,7 @@ function renderDashboardMaintenanceAlerts() {
         
         statusCard.innerHTML = `
             <div class="status-card__header" style="margin-bottom: 4px;">
-                <strong><i class="fa-solid fa-gears"></i> ${registro.peca}</strong>
+                <strong><i class="fa-solid fa-gears"></i> ${escapeHtml(registro.peca)}</strong>
                 <span class="status-badge">${statusTexto}</span>
             </div>
             <div class="status-card__details">
