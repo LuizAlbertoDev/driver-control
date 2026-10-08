@@ -18,11 +18,11 @@ function renderEarnings() {
         const earningItem = document.createElement('div');
 
         earningItem.classList.add('record-card');
-        earningItem.classList.add(`platform-${earning.platform}`);
+        earningItem.classList.add(`platform-${String(earning.platform).toLowerCase().replace(/[^a-z0-9_-]/g, '-')}`);
 
         earningItem.innerHTML = `
-            <p><strong>Data:</strong> ${earning.date}</p>
-            <p><strong>Plataforma:</strong> ${earning.platform}</p>
+            <p><strong>Data:</strong> ${escapeHtml(earning.date)}</p>
+            <p><strong>Plataforma:</strong> ${escapeHtml(earning.platform)}</p>
             <p><strong>KM rodados:</strong> ${earning.km}</p>
             <p><strong>Valor ganho:</strong>
                 ${Number(earning.earned).toLocaleString('pt-BR', {
