@@ -55,11 +55,11 @@ function renderExpenses() {
         expenseItem.classList.add(`expense-${expense.category}`);
 
         expenseItem.innerHTML = `
-            <p><strong>Data:</strong> ${expense.date}</p>
+            <p><strong>Data:</strong> ${escapeHtml(expense.date)}</p>
 
             <p><strong>Categoria:</strong> ${
-                expense.category.charAt(0).toUpperCase() +
-                expense.category.slice(1)
+                escapeHtml(expense.category.charAt(0).toUpperCase()) +
+                escapeHtml(expense.category.slice(1))
             }</p>
 
             <p><strong>Valor:</strong>
@@ -69,7 +69,7 @@ function renderExpenses() {
                 })}
             </p>
 
-            <p><strong>Descrição:</strong> ${expense.description}</p>
+            <p><strong>Descrição:</strong> ${escapeHtml(expense.description)}</p>
 
             <p><strong>KM Atual:</strong>
                 ${expense.vehicleKm.toLocaleString("pt-BR")} km
