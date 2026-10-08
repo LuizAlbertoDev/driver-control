@@ -110,7 +110,7 @@ function renderMaintenanceStatus() {
         statusCard.className = `status-card ${statusClass}`;
         statusCard.innerHTML = `
             <div class="status-card__header">
-                <strong><i class="fa-solid fa-gears"></i> ${registro.peca}</strong>
+                <strong><i class="fa-solid fa-gears"></i> ${escapeHtml(registro.peca)}</strong>
                 <span class="status-badge">${statusTexto}</span>
             </div>
             <div class="status-card__details">
@@ -143,7 +143,7 @@ function renderMaintenance() {
         card.classList.add("record-card", "maintenance-record");
 
         card.innerHTML = `
-            <p><strong>Peça:</strong> ${registro.peca}</p>
+            <p><strong>Peça:</strong> ${escapeHtml(registro.peca)}</p>
             <p><strong>Data:</strong> ${registro.date}</p>
             <p><strong>KM da troca:</strong> ${registro.kmTroca.toLocaleString('pt-BR')} km</p>
             <p><strong>Próxima troca:</strong> ${registro.proximaTroca.toLocaleString('pt-BR')} km</p>
