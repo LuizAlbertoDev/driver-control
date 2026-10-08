@@ -1,105 +1,66 @@
-# 🚗 Driver Control
+# Driver Control — gestão para motoristas de aplicativo
 
-> Painel de controle financeiro e de manutenção para motoristas de aplicativo.
+Aplicação web para acompanhar **ganhos, despesas, quilômetros percorridos e manutenção do veículo**, com funcionamento local no navegador.
 
-![Dashboard](assets/img/dashboard.png)
+[**Ver demonstração**](https://luizalbertodev.github.io/driver-control/) · [**Ver código**](https://github.com/LuizAlbertoDev/driver-control)
 
----
+![Visão geral do painel](assets/img/dashboard.png)
 
-## 📋 Sobre o projeto
+## O problema
 
-Motoristas de aplicativo administram um negócio próprio mas raramente têm ferramentas adequadas para isso. Aplicativos genéricos de finanças não entendem os custos específicos desse mercado.
+Motoristas de aplicativo precisam acompanhar receitas e custos do veículo para compreender o resultado do trabalho. O Driver Control reúne essas informações em uma interface simples.
 
-O **Driver Control** resolve esse problema oferecendo um painel completo e simples para controle de ganhos, despesas e manutenção do veículo — tudo salvo localmente no navegador, sem necessidade de cadastro ou internet.
+## Funcionalidades
 
----
+- **Dashboard:** resumo de ganhos, gastos, resultado líquido e quilometragem.
+- **Ganhos:** registros por data, plataforma e informações da corrida.
+- **Despesas:** lançamento de custos como combustível, pedágios e alimentação.
+- **Manutenção:** acompanhamento de serviços e alertas baseados na quilometragem.
+- **Interface responsiva:** acesso pelo computador e celular.
 
-## 🔗 Demo ao vivo
+## Tecnologias utilizadas nesta versão
 
-👉 [Acesse o projeto online](https://luizalbertodev.github.io/driver-control/)
-
-___
-
-
-## ✨ Funcionalidades
-
-- 📊 **Dashboard** — resumo mensal de ganhos, gastos, lucro líquido e km rodados
-- 💰 **Controle de Ganhos** — registro por data, plataforma (Uber, 99, InDrive), km e combustível
-- 💸 **Controle de Despesas** — categorias como combustível, alimentação, pedágio, lavagem e outros
-- 🔧 **Manutenção Inteligente** — alertas automáticos de troca de peças por quilometragem
-- 📱 **Responsivo** — funciona em celular e desktop
-
----
-
-## 🛠️ Tecnologias utilizadas
-
-- HTML5 semântico
-- CSS3 com variáveis customizadas e Flexbox
-- JavaScript Vanilla (ES6+)
-- LocalStorage para persistência de dados
+- HTML5
+- CSS3 (Flexbox e variáveis CSS)
+- JavaScript puro (ES6+)
+- LocalStorage para armazenamento no próprio navegador
 - Font Awesome para ícones
 
----
+> **Escopo atual:** esta versão é uma aplicação frontend, **sem React, backend Node.js, PostgreSQL ou autenticação de usuários**. Os dados ficam salvos no navegador/dispositivo utilizado; não há sincronização entre aparelhos.
 
-## 🚀 Como rodar localmente
+## Como executar
 
-```bash
-# Clone o repositório
-git clone https://github.com/LuizAlbertoDev/driver-control.git
+1. Clone o repositório:
 
-# Entre na pasta
-cd driver-control
+   ```bash
+   git clone https://github.com/LuizAlbertoDev/driver-control.git
+   ```
 
-# Abra o arquivo index.html no navegador
-# Não precisa de servidor ou instalação
-```
+2. Abra a pasta `driver-control`.
+3. Abra `index.html` no navegador.
 
----
+Não é necessário instalar dependências ou executar um servidor para a versão atual.
 
-## 📸 Screenshots
+## Telas
 
-### Dashboard
-![Dashboard](assets/img/dashboard.png)
+| Dashboard | Ganhos |
+| --- | --- |
+| ![Dashboard](assets/img/dashboard.png) | ![Ganhos](assets/img/ganhos.png) |
 
-### Controle de Ganhos
-![Ganhos](assets/img/ganhos.png)
+| Despesas | Manutenção |
+| --- | --- |
+| ![Despesas](assets/img/despesas.png) | ![Manutenção](assets/img/manutencao1.png) |
 
-### Controle de Despesas
-![Despesas](assets/img/despesas.png)
+## Próximos passos (planejados, ainda não implementados)
 
-### Manutenção
-![Manutenção](assets/img/manutencao1.png)
+- [ ] Criar backend com Node.js e uma API REST.
+- [ ] Persistir dados em PostgreSQL.
+- [ ] Implementar autenticação real.
+- [ ] Migrar a interface para React/TypeScript.
+- [ ] Adicionar testes automatizados e publicação com backend.
 
-### Manutenção
-![Manutenção](assets/img/manutencao1.png)
+## Sobre
 
----
+Projeto de estudos e portfólio, com documentação da **versão realmente disponível neste repositório**.
 
-## 🗺️ Próximas funcionalidades
-
-- [ ] Login de usuários com autenticação
-- [ ] Backend com Node.js e Express
-- [ ] Banco de dados PostgreSQL
-- [ ] Migração para React
-- [ ] Exportação de relatórios em PDF
-- [ ] Aplicativo mobile
-
----
-
-## 🌐 Deploy
-
-Hospedado via **GitHub Pages** — acesse em:  
-https://luizalbertodev.github.io/driver-control/
-
-___
-
-## 👨‍💻 Autor
-
-**Luiz Alberto**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luiz-alberto-huller-da-silva-1195321b5/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LuizAlbertoDev)
-
----
-
-> Projeto desenvolvido para portfólio — em evolução contínua.
+[GitHub](https://github.com/LuizAlbertoDev) · [LinkedIn](https://www.linkedin.com/in/luizalbertodev/)
